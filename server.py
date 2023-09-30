@@ -1,12 +1,12 @@
 import socket
-
+import sys
 
 def server_program():
 
        # creating server socket and binding the host and port number
        host = socket.gethostname()
        server_socket = socket.socket()
-       server_socket.bind((host, 5000))
+       server_socket.bind((host, port))
 
        #server is listening to one client simultaneously
        server_socket.listen(1)
@@ -22,4 +22,5 @@ def server_program():
        conn.close()
 
 if __name__ == '__main__':
+    port = int(sys.argv[1]) # take port number of server as an argument
     server_program()
