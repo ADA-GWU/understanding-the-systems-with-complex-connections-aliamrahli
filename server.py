@@ -4,7 +4,7 @@ import socket
 def server_program():
 
        # creating server socket and binding the host and port number
-       host = socket.gethostname() #
+       host = socket.gethostname()
        server_socket = socket.socket()
        server_socket.bind((host, 5000))
 
@@ -14,9 +14,12 @@ def server_program():
        conn, address = server_socket.accept() #accepting the connection request from client
        print("Successfully connected to: " + str(address))
 
-       data = conn.recv(1024).decode() #getting data sent by client
-       print("Message from client: " + str(data))
-
+       while True:
+              data = conn.recv(1024).decode() #getting data sent by client
+              if not data:
+                     break #if no data received exit the loop and close connection
+              print("Message from client: " + str(data))
+       conn.close()
 
 if __name__ == '__main__':
     server_program()

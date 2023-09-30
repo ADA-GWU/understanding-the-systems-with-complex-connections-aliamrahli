@@ -6,8 +6,10 @@ def client_program():
     client_socket = socket.socket()
     host = socket.gethostname()
     client_socket.connect((host, 5000))  # send connection request to server
-    message = input(" -> ")  # take input from user
-    client_socket.send(message.encode()) # send the input to server
+    message = ''
+    while message.strip() != 'stop': #program will continue untill user types stop
+        message = input(" -> ")  # take input from user
+        client_socket.send(message.encode()) # send the input to server
 
 
 
