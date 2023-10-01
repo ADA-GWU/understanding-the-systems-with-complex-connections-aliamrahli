@@ -8,6 +8,10 @@ There exists a client program designed to establish connections with one of thre
 
 ## Guide:
 
+You can watch one-minute tutorial video how can you run the program from scratch. Or read the below guide.
+
+https://www.youtube.com/watch?v=ztDKavceQ7M&feature=youtu.be
+
 Python is cross-platform programming language, and code itself checked in case of any portability issues. Code should work on most of the operating systems like macOS and Linux in the same way. 
 
 ```diff 
