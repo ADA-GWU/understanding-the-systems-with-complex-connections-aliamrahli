@@ -5,7 +5,7 @@ import random
 def client_program():
     ports = [5000, 5001, 5002]  # three different servers on these ports
     flag = 0
-    print('Type exit to stop the program')
+    print('Welcome! Type exit to stop the program!')
     while len(ports) != 0:  # program will continue until user types stop
         port = random.choice(ports)  # randomly choosing one of the servers
 
