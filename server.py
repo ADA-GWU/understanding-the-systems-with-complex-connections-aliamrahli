@@ -10,13 +10,23 @@ def server_program():
         server_socket.bind((host, port))
 
         # server is listening to one client simultaneously
-        server_socket.listen(1)
+        server_socket.listen(5)
 
         conn, address = server_socket.accept()  # accepting the connection request from client
         print("Successfully connected to: " + str(address))
 
         data = conn.recv(1024).decode()  # getting data sent by client
-        print("Message from client: " + str(data))
+
+        if str(data) == 'exit':
+            print('Connection closed')
+            break
+
+        if not data.isdigit():
+            print('This program works only with digits!')
+            continue
+        else:
+            new_data = 2 * int(data)
+        print("Message from client: " + str(new_data))
 
 
 if __name__ == '__main__':
