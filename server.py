@@ -9,9 +9,6 @@ def server_program():
         server_socket = socket.socket()
         server_socket.bind((host, port))
 
-        # server is listening to one client simultaneously
-        server_socket.listen(5)
-
         conn, address = server_socket.accept()  # accepting the connection request from client
         print("Successfully connected to: " + str(address))
 
